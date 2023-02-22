@@ -1,11 +1,11 @@
 from unittest import TestCase
 from unittest.mock import patch, Mock
 
-from poe_alt_gem_appraisal.auth import POEAuth, POEAuthScope
+from auth import POEAuth, POEAuthScope
 
 
 class TestAuth(TestCase):
-    @patch("poe_alt_gem_appraisal.auth.POEAuth.request_token")
+    @patch("auth.POEAuth.request_token")
     def test_get_token_new(self, mock_request):
         mock_request.return_value = "mock_token"
 
@@ -14,7 +14,7 @@ class TestAuth(TestCase):
             auth.get_token(scope=auth.service_psapi), auth.service_psapi.token
         )
 
-    @patch("poe_alt_gem_appraisal.auth.POEAuth.request_token")
+    @patch("auth.POEAuth.request_token")
     def test_get_token_existing(self, mock_request):
         """A new token should not be requested if the scope already has one."""
 
