@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "poe-alt-gem-appraisal"
+authors = [
+    {name = "Alex James", email = "alexjames12345@hotmail.com"},
+]
+description = "Tool for quickly price checking alt quality gems"
+readme = "README.md"
+dynamic = ["version"]
+requires-python = ">=3.11"
+keywords = ["poe", "path of exile"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+
+[project.optional-dependencies]
+linting = ["black"]
