@@ -2,7 +2,7 @@ from typing import Type
 
 import requests
 
-from exception import ScopeNotGrantedError
+from .exception import ScopeNotGrantedError
 
 
 class POEAuth:
