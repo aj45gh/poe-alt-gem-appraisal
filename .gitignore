@@ -1,2 +1,6 @@
+# Editor settings
+.vscode
+
+# Python build output files
 dist/
 *.egg-info
