@@ -10,7 +10,7 @@ authors = [
 description = "Tool for quickly price checking alt quality gems"
 readme = "README.md"
 dynamic = ["version"]
-requires-python = ">=3.11"
+requires-python = ">=3.9"
 keywords = ["poe", "path of exile"]
 classifiers = [
     "Programming Language :: Python :: 3",
