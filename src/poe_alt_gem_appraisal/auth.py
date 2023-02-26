@@ -2,6 +2,7 @@ from typing import Type
 
 import requests
 
+from scope import POEAuthScope
 from exception import ScopeNotGrantedError
 
 
@@ -18,19 +19,7 @@ class POEAuth:
         self.client_id = client_id
         self.client_secret = client_secret
 
-        # Available auth scopes
-        self.account_profile = POEAuthScope(id="account:profile")
-        self.account_stashes = POEAuthScope(id="account:stashes")
-        self.account_characters = POEAuthScope(id="account:characters")
-        self.account_league_accounts = POEAuthScope(id="account:league_accounts")
-        self.account_item_filter = POEAuthScope(id="account:item_filter")
-        self.service_leagues = POEAuthScope(id="service:leagues")
-        self.service_leagues_ladder = POEAuthScope(id="service:leagues:ladder")
-        self.service_pvp_matches = POEAuthScope(id="service:pvp_matches")
-        self.service_pvp_matches_ladder = POEAuthScope(id="service:pvp_matches:ladder")
-        self.service_psapi = POEAuthScope(id="service:psapi", granted=True)
-
-    def get_token(self, scope: Type["POEAuthScope"]) -> str:
+    def get_token(self, scope: POEAuthScope) -> str:
         """Return an existing token for the given scope, or request a new one.
 
         Keyword arguments:
@@ -73,28 +62,3 @@ class POEAuth:
 
         except Exception as e:
             raise e
-
-
-class POEAuthScope:
-    """Hold data related to auth scopes."""
-
-    def __init__(self, id: str, granted: bool = False):
-        """POEAuthScope class constructor.
-
-        Keyword arguments:
-        id -- used when referring to scope (ex: "service:psapi")
-        granted -- whether application has access to scope, defaults to False
-        """
-
-        self.id = id
-        self.granted = granted
-
-        self._token = ""
-
-    @property
-    def token(self):
-        return self._token
-
-    @token.setter
-    def token(self, token: str):
-        self._token = token

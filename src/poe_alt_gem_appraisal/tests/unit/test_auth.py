@@ -2,6 +2,7 @@ from unittest import TestCase
 from unittest.mock import patch
 
 from auth import POEAuth
+import scope
 
 
 class TestAuth(TestCase):
@@ -11,7 +12,7 @@ class TestAuth(TestCase):
 
         auth = POEAuth("mock_client_id", "mock_client_secret")
         self.assertEqual(
-            auth.get_token(scope=auth.service_psapi), auth.service_psapi.token
+            auth.get_token(scope=scope.SERVICE_PSAPI), scope.SERVICE_PSAPI.token
         )
 
     @patch("auth.POEAuth.request_token")
@@ -21,8 +22,8 @@ class TestAuth(TestCase):
         mock_request.return_value = "new_mock_token"
 
         auth = POEAuth("mock_client_id", "mock_client_secret")
-        auth.service_psapi.token = "existing_mock_token"
+        scope.SERVICE_PSAPI.token = "existing_mock_token"
 
         self.assertNotEqual(
-            auth.get_token(scope=auth.service_psapi), mock_request.return_value
+            auth.get_token(scope.SERVICE_PSAPI), mock_request.return_value
         )
