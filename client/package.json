@@ -1,0 +1,19 @@
+{
+  "name": "poe-alt-gem-appraisal-fe",
+  "version": "1.0.0",
+  "description": "web interface for alt quality gem pricing tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aj45gh/poe-alt-gem-appraisal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aj45gh/poe-alt-gem-appraisal/issues"
+  },
+  "homepage": "https://github.com/aj45gh/poe-alt-gem-appraisal#readme"
+}
