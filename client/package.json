@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/aj45gh/poe-alt-gem-appraisal/issues"
   },
-  "homepage": "https://github.com/aj45gh/poe-alt-gem-appraisal#readme"
+  "homepage": "https://github.com/aj45gh/poe-alt-gem-appraisal#readme",
+  "dependencies": {
+    "next": "^13.4.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }
