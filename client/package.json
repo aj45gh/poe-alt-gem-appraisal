@@ -4,7 +4,8 @@
   "description": "web interface for alt quality gem pricing tool",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "dev": "next dev"
   },
   "repository": {
     "type": "git",
@@ -17,8 +18,13 @@
   },
   "homepage": "https://github.com/aj45gh/poe-alt-gem-appraisal#readme",
   "dependencies": {
+    "bulma": "^0.9.4",
     "next": "^13.4.4",
+    "node-sass": "^9.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "sass": "^1.62.1"
   }
 }
