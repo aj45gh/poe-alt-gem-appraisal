@@ -1,9 +1,10 @@
 # Editor settings
 .vscode
 
-# Python build output files
+# Python files
 dist/
 *.egg-info
+__pycache__
 
 # NPM files
 node_modules
