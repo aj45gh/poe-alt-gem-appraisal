@@ -1,5 +1,5 @@
-export async function getStaticProps() {
-    const res = await fetch("http://localhost:8000/altGems");
+export async function getServerSideProps() {
+    const res = await fetch("http://api:8000/altGems");
     const gems = await res.json();
 
     return { props: { gems } };
