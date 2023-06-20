@@ -1,5 +1,7 @@
 FROM python:3.11.3-alpine
 
+RUN apk add gcc libc-dev libffi-dev
+
 RUN pip install "poetry==1.4.2"
 
 WORKDIR /api
